@@ -1,6 +1,7 @@
 # backend/services/resume_service.py
-from langchain.document_loaders import PyPDFLoader, Docx2txtLoader
+from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.schema import Document
 import os
 
 class ResumeProcessor:
@@ -13,20 +14,26 @@ class ResumeProcessor:
         )
     
     def load_resume(self, file_path: str):
-        """Load and chunk resume from PDF or DOCX"""
+        """Load and chunk resume from PDF, DOCX, or TXT"""
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
         
         # Determine file type and use appropriate loader
         if file_path.lower().endswith('.pdf'):
             loader = PyPDFLoader(file_path)
+            documents = loader.load()
         elif file_path.lower().endswith(('.docx', '.doc')):
             loader = Docx2txtLoader(file_path)
+            documents = loader.load()
+        elif file_path.lower().endswith('.txt'):
+            # Handle plain text files
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            documents = [Document(page_content=content, metadata={"source": file_path})]
         else:
-            raise ValueError("Unsupported file type. Use PDF or DOCX.")
+            raise ValueError("Unsupported file type. Use PDF, DOCX, or TXT.")
         
         # Load and split documents
-        documents = loader.load()
         chunked_docs = self.text_splitter.split_documents(documents)
         
         print(f"✅ Loaded {len(documents)} pages, split into {len(chunked_docs)} chunks")

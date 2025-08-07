@@ -1,7 +1,8 @@
 # backend/services/rag_service.py
 from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from .deepseek_service import get_deepseek_llm
 import os
 from dotenv import load_dotenv
 
@@ -9,11 +10,17 @@ load_dotenv()
 
 class RAGService:
     def __init__(self, vector_store):
-        self.llm = ChatOpenAI(
-            temperature=0.7,
-            model="gpt-3.5-turbo",
-            openai_api_key=os.getenv("OPENAI_API_KEY")
-        )
+        # Try DeepSeek first, fallback to OpenAI
+        try:
+            self.llm = get_deepseek_llm()
+            print("✅ Using DeepSeek LLM")
+        except Exception as e:
+            print(f"⚠️  DeepSeek not available ({e}), falling back to OpenAI")
+            self.llm = ChatOpenAI(
+                temperature=0.7,
+                model="gpt-3.5-turbo",
+                openai_api_key=os.getenv("OPENAI_API_KEY")
+            )
         self.vector_store = vector_store
         self.setup_qa_chain()
     

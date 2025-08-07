@@ -1,0 +1,65 @@
+John Smith - Senior Software Engineer
+
+Contact Information:
+Email: john.smith@email.com 
+Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/johnsmith
+Location: San Francisco, CA
+
+PROFESSIONAL EXPERIENCE
+
+Senior Software Engineer | TechCorp Inc. | 2021-2024
+• Developed scalable web applications using Python, Django, and React
+• Built REST APIs serving over 100,000 daily active users
+• Implemented machine learning recommendation systems using scikit-learn and TensorFlow
+• Led cross-functional team of 4 developers in agile development environment
+• Deployed applications on AWS using Docker and Kubernetes
+• Achieved 99.9% uptime and reduced response times by 40%
+
+Software Developer | StartupXYZ | 2019-2021
+• Created full-stack web applications using JavaScript, Node.js, and MongoDB
+• Designed and optimized database schemas for high-performance queries
+• Collaborated with product managers to define technical requirements
+• Implemented comprehensive automated testing suite with 90%+ code coverage
+• Mentored 2 junior developers and conducted code reviews
+
+Junior Developer | DevShop LLC | 2018-2019
+• Built responsive websites using HTML, CSS, JavaScript, and PHP
+• Integrated third-party APIs and payment processing systems
+• Participated in daily standups and sprint planning meetings
+• Contributed to open-source projects and internal tool development
+
+TECHNICAL SKILLS
+Programming Languages: Python, JavaScript, Java, SQL, HTML, CSS, TypeScript
+Frameworks & Libraries: Django, React, Node.js, Flask, Express.js, Vue.js
+Databases: PostgreSQL, MongoDB, Redis, MySQL, SQLite
+Cloud & DevOps: AWS, Docker, Kubernetes, Jenkins, GitHub Actions, Terraform
+Machine Learning: scikit-learn, TensorFlow, pandas, NumPy
+Tools: Git, JIRA, Slack, Visual Studio Code, PyCharm
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Technology | 2015-2019
+GPA: 3.8/4.0
+Relevant Coursework: Data Structures, Algorithms, Database Systems, Machine Learning
+
+PROJECTS
+E-Commerce Platform (2023)
+• Built full-stack e-commerce application with payment processing using Stripe
+• Implemented user authentication, shopping cart, and order management
+• Technologies: Python, Django, React, PostgreSQL, AWS
+
+Real-Time Analytics Dashboard (2022)  
+• Created interactive dashboard for business metrics using D3.js and Python
+• Processed over 1 million data points daily with real-time updates
+• Technologies: Python, Flask, D3.js, Redis, WebSocket
+
+Mobile Fitness App (2021)
+• Developed React Native mobile application with 50,000+ downloads
+• Integrated with fitness APIs and implemented social features
+• Technologies: React Native, Node.js, MongoDB, Firebase
+
+CERTIFICATIONS
+• AWS Certified Solutions Architect (2023)
+• Google Cloud Professional Data Engineer (2022)
+• Certified Scrum Master (2021)
